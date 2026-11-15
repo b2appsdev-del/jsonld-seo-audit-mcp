@@ -1,57 +1,12 @@
-# Schema.org JSON-LD, Rich Results & Technical SEO Auditor MCP (`@b2apps/jsonld-seo-audit-mcp`)
+# Schema.org JSON-LD, Rich Results & Technical SEO Auditor MCP (`@b2apps/jsonld-seo-audit-mcp`)Deterministic **Model Context Protocol (MCP)** server for **Schema.org JSON-LD validation**, **Google Rich Results readiness scoring**, **deterministic JSON-LD script generation**, and **HTML technical SEO & Open Graph meta tag auditing**.Built for AI coding, web development, and SEO engineering agents in **Claude Desktop, Cursor, Windsurf, VS Code Copilot, and Antigravity**.---
 
-Deterministic **Model Context Protocol (MCP)** server for **Schema.org JSON-LD validation**, **Google Rich Results readiness scoring**, **deterministic JSON-LD script generation**, and **HTML technical SEO & Open Graph meta tag auditing**.
+## Free Online Tool / Pro Suite
 
-Built for AI coding, web development, and SEO engineering agents in **Claude Desktop, Cursor, Windsurf, VS Code Copilot, and Antigravity**.
+- 🚀 **Free Online Web Tools**: Explore our interactive browser tools including LLMs.txt generator and live calculators at [https://b2appsdev-del.github.io/](https://b2appsdev-del.github.io/).
+- 💼 **Developer & Compliance Starter Kits ($0+ PWYW / $29 Pro)**: Access production-grade checklists, templates, and reference implementations on Gumroad:
+  - [GDPR Cookie & ROPA Compliance Kit](https://devbloom12.gumroad.com/l/fgeokd?utm_source=github&utm_medium=readme)
+  - [EU VAT & B2B SaaS Invoicing Kit](https://devbloom12.gumroad.com/l/umkclc?utm_source=github&utm_medium=readme)
+  - [UCITS ETF & EU Fund Analytics Kit](https://devbloom12.gumroad.com/l/fynlyw?utm_source=github&utm_medium=readme)
+- 🌐 **All B2 Apps Tools & Directory**: Discover our complete portfolio of MCP servers, Apify actors, and web tools at [https://b2appsdev-del.github.io/](https://b2appsdev-del.github.io/).
 
----
-
-## Why Use This MCP Server?
-
-LLMs frequently emit deprecated Schema.org properties, forget mandatory Google Rich Results fields (such as `offers.priceCurrency` on `Product`, `mainEntity` arrays on `FAQPage`, or `itemListElement.position` on `BreadcrumbList`), or miss subtle HTML canonical/Open Graph mismatches. `@b2apps/jsonld-seo-audit-mcp` equips your agent with a **100% deterministic, zero-network validation and generation engine**:
-
-1. **`validate_jsonld`** — Extracts `<script type="application/ld+json">` blocks from raw HTML or parses standalone JSON-LD payloads, validates `@context` (`https://schema.org`), `@type` (`Article`, `Product`, `FAQPage`, `Organization`, `SoftwareApplication`, `BreadcrumbList`), required and recommended properties, and computes a `0–100` Google Rich Results readiness score.
-2. **`generate_jsonld`** — Deterministically generates clean, syntax-verified Schema.org JSON-LD objects and ready-to-embed `<script type="application/ld+json">` HTML snippets from structured inputs.
-3. **`audit_seo_meta`** — Audits raw HTML for `<title>` length (`30–60` chars), `<meta name="description">` (`70–160` chars), canonical `<link rel="canonical">`, `<meta name="robots">`, Open Graph (`og:title`, `og:description`, `og:image`, `og:url`, `og:type`), Twitter Card tags, `<h1>` count, and `<img>` `alt` attribute coverage.
-4. **`batch_audit_urls_pro`** — Audits multiple HTML/URL payloads in a single batch call and generates structured JSON and CSV audit reports. Free tier audits up to 5 payloads per call; Pro license key (`$19/mo`) unlocks unlimited batch auditing.
-
----
-
-## Quick Start & Client Configuration (`mcpServers`)
-
-### Claude Desktop / Cursor / Windsurf (`claude_desktop_config.json` or `.cursor/mcp.json`)
-
-```json
-{
-  "mcpServers": {
-    "jsonld-seo-audit": {
-      "command": "npx",
-      "args": ["-y", "@b2apps/jsonld-seo-audit-mcp"],
-      "env": {
-        "MCP_PRO_LICENSE_KEY": ""
-      }
-    }
-  }
-}
-```
-
-### Smithery CLI
-
-```bash
-npx -y @smithery/cli install @b2apps/jsonld-seo-audit-mcp --client claude
-```
-
----
-
-## Network, Telemetry & Billing Disclosure
-
-- **100% Offline Local Execution (`stdio`)**: All 4 tools included in the local `stdio` server run completely offline on your machine. **Zero external network requests, zero telemetry, and zero logging of your HTML, URLs, or structured data.**
-- **Free MIT Core vs. Pro License Tier (`$19/mo`)**:
-  - **Free Tier (`$0`, MIT)**: Unlimited calls to `validate_jsonld`, `generate_jsonld`, `audit_seo_meta`, and `batch_audit_urls_pro` (up to 5 HTML/URL payloads per batch call).
-  - **Pro Tier (`$19/mo` via Gumroad / LemonSqueezy)**: Setting `MCP_PRO_LICENSE_KEY` (or passing `proLicenseKey`) unlocks unlimited batch auditing plus automated JSON/CSV report generation (`https://b2apps.lemonsqueezy.com/buy/jsonld-seo-audit-mcp-pro`).
-
----
-
-## Mandatory Disclaimer
-
-> **Disclaimer**: *Educational & technical compliance planning tool only; does not constitute financial, tax, or legal advice, nor a guarantee of Google Rich Results eligibility or search engine rankings.* Search engine algorithms and Schema.org specifications evolve continuously; always verify structured data in Google Search Console prior to production deployment.
+## Why Use This MCP Server?LLMs frequently emit deprecated Schema.org properties, forget mandatory Google Rich Results fields (such as `offers.priceCurrency` on `Product`, `mainEntity` arrays on `FAQPage`, or `itemListElement.position` on `BreadcrumbList`), or miss subtle HTML canonical/Open Graph mismatches. `@b2apps/jsonld-seo-audit-mcp` equips your agent with a **100% deterministic, zero-network validation and generation engine**:1. **`validate_jsonld`** — Extracts `<script type="application/ld+json">` blocks from raw HTML or parses standalone JSON-LD payloads, validates `@context` (`https://schema.org`), `@type` (`Article`, `Product`, `FAQPage`, `Organization`, `SoftwareApplication`, `BreadcrumbList`), required and recommended properties, and computes a `0–100` Google Rich Results readiness score.2. **`generate_jsonld`** — Deterministically generates clean, syntax-verified Schema.org JSON-LD objects and ready-to-embed `<script type="application/ld+json">` HTML snippets from structured inputs.3. **`audit_seo_meta`** — Audits raw HTML for `<title>` length (`30–60` chars), `<meta name="description">` (`70–160` chars), canonical `<link rel="canonical">`, `<meta name="robots">`, Open Graph (`og:title`, `og:description`, `og:image`, `og:url`, `og:type`), Twitter Card tags, `<h1>` count, and `<img>` `alt` attribute coverage.4. **`batch_audit_urls_pro`** — Audits multiple HTML/URL payloads in a single batch call and generates structured JSON and CSV audit reports. Free tier audits up to 5 payloads per call; Pro license key (`$19/mo`) unlocks unlimited batch auditing.---## Quick Start & Client Configuration (`mcpServers`)### Claude Desktop / Cursor / Windsurf (`claude_desktop_config.json` or `.cursor/mcp.json`)```json{ "mcpServers": { "jsonld-seo-audit": { "command": "npx", "args": ["-y", "@b2apps/jsonld-seo-audit-mcp"], "env": { "MCP_PRO_LICENSE_KEY": "" } } }}```### Smithery CLI```bashnpx -y @smithery/cli install @b2apps/jsonld-seo-audit-mcp --client claude```---## Network, Telemetry & Billing Disclosure- **100% Offline Local Execution (`stdio`)**: All 4 tools included in the local `stdio` server run completely offline on your machine. **Zero external network requests, zero telemetry, and zero logging of your HTML, URLs, or structured data.**- **Free MIT Core vs. Pro License Tier (`$19/mo`)**: - **Free Tier (`$0`, MIT)**: Unlimited calls to `validate_jsonld`, `generate_jsonld`, `audit_seo_meta`, and `batch_audit_urls_pro` (up to 5 HTML/URL payloads per batch call). - **Pro Tier (`$19/mo` via Gumroad / LemonSqueezy)**: Setting `MCP_PRO_LICENSE_KEY` (or passing `proLicenseKey`) unlocks unlimited batch auditing plus automated JSON/CSV report generation (`https://b2apps.lemonsqueezy.com/buy/jsonld-seo-audit-mcp-pro`).
