@@ -1,0 +1,29 @@
+{
+  "name": "@b2apps/jsonld-seo-audit-mcp",
+  "version": "1.0.0",
+  "description": "Deterministic Schema.org JSON-LD validator, Google Rich Results readiness scorer, structured data generator, and HTML technical SEO meta/OpenGraph auditor MCP server.",
+  "type": "module",
+  "main": "src/index.mjs",
+  "bin": {
+    "jsonld-seo-audit-mcp": "src/index.mjs"
+  },
+  "scripts": {
+    "start": "node src/index.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "json-ld",
+    "schema-org",
+    "seo-audit",
+    "rich-results",
+    "structured-data",
+    "open-graph"
+  ],
+  "author": "B2 Apps (b2apps.dev@gmail.com)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
