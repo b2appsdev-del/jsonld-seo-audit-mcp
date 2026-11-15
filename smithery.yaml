@@ -1,0 +1,15 @@
+# Smithery.ai configuration for @b2apps/jsonld-seo-audit-mcp
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      mcpProLicenseKey:
+        type: string
+        description: Optional Pro license key for unlimited batch HTML/URL SEO auditing and CSV/JSON reports ($19/mo).
+  commandFunction: |-
+    (config) => ({
+      command: 'node',
+      args: ['src/index.mjs'],
+      env: config.mcpProLicenseKey ? { MCP_PRO_LICENSE_KEY: config.mcpProLicenseKey } : {}
+    })
